@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "module": "index.ts",
+  "scripts": {
+    "dev": "bun index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@repo/store": "*",
+    "axios": "^1.12.2",
+    "express": "^5.1.0",
+    "zod": "^4.1.11"
+  }
+}
