@@ -64,4 +64,3 @@ describe("Auth routes", () => {
 
   afterAll(async () => await DeleteUser(testUser.username));
 });
-

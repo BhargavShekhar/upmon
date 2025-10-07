@@ -18,6 +18,6 @@ export const auth = (req: Request, res: Response, next: NextFunction) => {
         next();
     } catch (error) {
         console.log("Middleware:: auth: could not authorize the user ", error);
-        res.status(500).json({ msg: "Please try again later" });
+        res.status(401).json({ msg: "Please try again later" });
     }
 }
