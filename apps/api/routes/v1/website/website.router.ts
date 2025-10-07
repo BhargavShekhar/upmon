@@ -1,15 +1,11 @@
 import { prisma } from "@repo/store";
 import { Router } from "express";
-import { z } from "zod";
+import { websiteUrlSchema } from "./schema";
 
 const router = Router();
 
-const websiteUrl = z.object({
-    url: z.string().min(1, "url must be provided")
-})
-
 router.post("/", async (req, res) => {
-    const result = websiteUrl.safeParse(req.body);
+    const result = websiteUrlSchema.safeParse(req.body);
 
     if(!result.success) return res.status(400) .json({ msg: result.error.message })
 
@@ -31,4 +27,4 @@ router.get("/test", (req, res) => {
     res.json({ msg: "lol" })
 })
 
-export default router;
+export default router; 
